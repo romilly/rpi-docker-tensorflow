@@ -27,7 +27,7 @@ https://github.com/umiddelb/armhf/wiki/Get-Docker-up-and-running-on-the-Raspberr
 1. Clone this repository into a directory of your choice
   1. `git clone https://github.com/romilly/rpi-docker-tensorflow.git`
 1. Build the image
-  1. `cd rpi-docker-tensorflow`
+  1. `cd rpi-docker-tensorflow\build-tensor-pi\`
   1. `docker build -t='yourName/rpi-docker-tensorflow' .`
 
 
