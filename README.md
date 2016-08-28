@@ -41,9 +41,11 @@ they will still be there when the container is stopped and restarted.
 
 `docker run -it -p 8888:8888 -v ~/myNotebooks:/notebooks/myNotebooks yourName/rpi-docker-tensorflow`
 
-If you see warnings like those in this screenshot you can ignore them.
+Previously there were some spurious warnings when the container started but the latest resin image fixes these.
+(Thanks, *resinators*!)
 
-![startup](images/startup.png)
+You can *probably* ignore the warnings about the insecurity of the IPython server configuration so long as you do not store any
+sensitive data or code in your notebooks.
 
 ## Connecting to the notebooks
 
