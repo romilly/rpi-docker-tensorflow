@@ -1,5 +1,13 @@
 # rpi-docker-tensorflow
 
+## Update:
+
+It looks as if Hypriot have removed their deb package, perhaps because Docker now officially support ARM architecture.
+
+I will investigate and update the instructions.
+
+**Until then the instructions below are out-of-date and will not work.**
+
 This is the build environment I used to create a docker image for the
 Raspbery Pi which contains TensorFlow, Jupyter and two TensorFlow
 notebooks copied from the official Google docker tensorflow build.
