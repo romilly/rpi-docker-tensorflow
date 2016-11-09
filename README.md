@@ -2,9 +2,12 @@
 
 ## Update:
 
-It looks as if Hypriot have removed their deb package, perhaps because Docker now officially support ARM architecture.
+Hypriot have removed their deb package, perhaps because Docker now officially support ARM architecture.
 
-I will investigate and update the instructions.
+I have installed Docker's official version for the Pi, and have encountered some problems in building a
+TensorFlow container.
+
+Once I have resolved these I will update the instructions.
 
 **Until then the instructions below are out-of-date and will not work.**
 
