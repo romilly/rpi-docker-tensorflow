@@ -2,36 +2,33 @@
 
 ## Update:
 
-Hypriot have removed their deb package, perhaps because Docker now officially support ARM architecture.
+Docker now officially support ARM architecture and this build environment uses the new Docker package for the Pi.
 
-I have installed Docker's official version for the Pi, and have encountered some problems in building a
-TensorFlow container.
+I tested the build using the latest version of rapsbian/jessie and a **16 Gb** SD card on a Raspberry Pi model 3B.
 
-Once I have resolved these I will update the instructions.
+Earlier attempts using an 8Gb card failed with disk full.
 
-**Until then the instructions below are out-of-date and will not work.**
-
-This is the build environment I used to create a docker image for the
+The build creates a docker image for the
 Raspbery Pi which contains TensorFlow, Jupyter and two TensorFlow
 notebooks copied from the official Google docker tensorflow build.
 
-The build relies heavily on the work of resin.io, Sam Abrahams and
+The build relies heavily on the work of resin.io, the Docker team, Sam Abrahams and
 the Google TensorFlow team. Sources are listed below.
 
 This is **not** an official TensorFlow port, so don't ask for or expect
 support from the TensorFlow team.
 
-I've done a little testing. I have tried the build and run the image
-on a Raspberry Pi Model 3B with Raspbian Jessie.
+At present this script builds a container based on Tensorflow 0.9.
+I plan to update this to use version 0.10 in the next few days.
+
 
 ## Build instructions
 
 1. Install Docker on your Raspberry Pi.
-  1. `curl -sSL http://downloads.hypriot.com/docker-hypriot_1.10.3-1_armhf.deb >/tmp/docker-hypriot_1.10.3-1_armhf.deb`
-  1. `sudo dpkg -i /tmp/docker-hypriot_1.10.3-1_armhf.deb`
-  1. `rm -f /tmp/docker-hypriot_1.10.3-1_armhf.deb`
-  1. `sudo sh -c 'usermod -aG docker $SUDO_USER'`
-  1. `sudo systemctl enable docker.service`
+  1. `curl -sSL get.docker.com | sh`
+  1. `sudo usermod -aG docker pi`
+  1. log out, then log back in again for the change to take effect
+  1. `sudo systemctl start docker`
 1. Clone this repository into a directory of your choice
   1. `git clone https://github.com/romilly/rpi-docker-tensorflow.git`
 1. Build the image
@@ -80,7 +77,7 @@ quick succession. The container will stop.
 
 # Sources
 
-1. Docker: https://github.com/umiddelb/armhf/wiki/Get-Docker-up-and-running-on-the-RaspberryPi-(ARMv6)-in-four-steps-(Wheezy)
+1. Docker: http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/
 1. [Base image](https://hub.docker.com/r/resin/rpi-raspbian/): from [a post by the chaps at resin.io](https://resin.io/blog/docker-on-raspberry-pi-in-4-simple-steps/)
 1. [Pi tensorflow whl file](https://github.com/samjabrahams/tensorflow-on-raspberry-pi/raw/master/bin/tensorflow-0.9.0-cp27-none-linux_armv7l.whl)
 from [Sam Abrahm's Github project](https://github.com/samjabrahams/tensorflow-on-raspberry-pi)
