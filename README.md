@@ -4,7 +4,7 @@
 
 Docker now officially support ARM architecture and this build environment uses the new Docker package for the Pi.
 
-I tested the build using the latest version of rapsbian/jessie and a **16 Gb** SD card on a Raspberry Pi model 3B.
+I tested the build using the latest version of raspbian/jessie-lite and a **16 Gb** SD card on a Raspberry Pi model 3B.
 
 Earlier attempts using an 8Gb card failed with disk full.
 
