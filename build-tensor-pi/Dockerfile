@@ -27,9 +27,9 @@ RUN pip --no-cache-dir install \
         matplotlib && \
             python -m ipykernel.kernelspec
 
-ADD tensorflow-0.9.0-cp27-none-linux_armv7l.whl .
+ADD tensorflow-0.10.0-cp27-none-linux_armv7l.whl .
 
-RUN pip install tensorflow-0.9.0-cp27-none-linux_armv7l.whl
+RUN pip install tensorflow-0.10.0-cp27-none-linux_armv7l.whl
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 

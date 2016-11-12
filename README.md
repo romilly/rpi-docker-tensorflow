@@ -2,7 +2,7 @@
 
 ## Update:
 
-Docker now officially support ARM architecture and this build environment uses the new Docker package for the Pi.
+Docker now officially support ARM architecture and this build uses the new Docker package for the Pi.
 
 I tested the build using the latest version of raspbian/jessie-lite and a **16 Gb** SD card on a Raspberry Pi model 3B.
 
@@ -10,7 +10,7 @@ Earlier attempts using an 8Gb card failed with disk full.
 
 The build creates a docker image for the
 Raspbery Pi which contains TensorFlow, Jupyter and two TensorFlow
-notebooks copied from the official Google docker tensorflow build.
+notebooks copied from the official Google docker TensorFlow build.
 
 The build relies heavily on the work of resin.io, the Docker team, Sam Abrahams and
 the Google TensorFlow team. Sources are listed below.
@@ -18,8 +18,8 @@ the Google TensorFlow team. Sources are listed below.
 This is **not** an official TensorFlow port, so don't ask for or expect
 support from the TensorFlow team.
 
-At present this script builds a container based on Tensorflow 0.9.
-I plan to update this to use version 0.10 in the next few days.
+The script builds a container based on Sam Abraham's initial release of TensorFlow 0.10 for
+the Raspberry Pi.
 
 
 ## Build instructions
@@ -62,8 +62,6 @@ hostname of the Pi on which the docker image is running, or on
 `http://localhost:8888` on the Pi itself.
 
 You should see a screen like this:
-
-![startup](images/notebooks.png)
 
 aaand you're away to the races!
 
