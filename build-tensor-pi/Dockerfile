@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian
+FROM arm32v7/python
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
@@ -7,10 +7,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpng12-dev \
         libzmq3-dev \
         pkg-config \
-        python \
-        python-dev \
-        python-numpy \
-        python-scipy \
+        python3-dev \
+        python3-numpy \
+        python3-scipy \
         rsync \
         unzip
 
@@ -27,9 +26,9 @@ RUN pip --no-cache-dir install \
         matplotlib && \
             python -m ipykernel.kernelspec
 
-ADD tensorflow-0.10.0-cp27-none-linux_armv7l.whl .
+ADD tensorflow-1.14.0-cp37-cp37m-linux_armv7l.whl .
 
-RUN pip install tensorflow-0.10.0-cp27-none-linux_armv7l.whl
+RUN pip install tensorflow-1.14.0-cp37-cp37m-linux_armv7l.whl
 
 COPY jupyter_notebook_config.py /root/.jupyter/
 
