@@ -2,29 +2,31 @@
 
 ## Warning:
 
-This is definitely not production code!
+This is definitely not production code, but *it runs on my machine(tm)*.
 
-It requires the latest nightly build of Docker for the Pi, which I installed by running
+It requires the latest nightly build of Docker for the Pi.
 
-using ```curl -fsSL get.docker.com | CHANNEL=nightly sh```
+## Background:
 
-## Update:
+I originally started this project to create a simple way for Pi owners to experiment with TensorFlow.
 
-This project has been dormant, because
+At the time, neither Docker nor TensorFlow were officially supported on the Pi.
 
-1. TensorFlow  and Docker officially support Raspbian
-1. While TensorFlow will run in a Docker container with jupyter, the limited memory of the Pi 3B+
+More recently, this project has been dormant, because
+
+1. TensorFlow  and Docker have officially supported Raspbian for a while, and
+1. While TensorFlow *will run* in a Docker container with Jupyter, the limited memory of the Pi 3B+
 meant that you couldn't do much with it.
 
 This has changed with the 4 GB model of the Pi 4B.
 
 I'm now attempting an experimental build for Raspbian buster that runs on a Raspberry Pi 4.
 
-I am testing the build using raspbian/buster and a **16 Gb** SD card on a Raspberry Pi model 4B with 4 GB of RAM.
+I am testing the build using Raspbian/buster and a 16 GB SD card on a Raspberry Pi model 4B with 4 GB of RAM.
 
 The script builds a container based on
 [Katsuya Hyodo's build of TensorFlow 1.14](https://github.com/PINTO0309/Tensorflow-bin) for
-the Raspberry Pi, with Tensorflow Lite enabled.
+the Raspberry Pi, with TensorFlow Lite enabled.
 
 The docker image contains TensorFlow, Jupyter and a TensorFlow
 notebook copied from the official Google docker TensorFlow build.
@@ -39,8 +41,8 @@ support from the TensorFlow team.
 
 ## Build instructions
 
-1. Install Docker on your Raspberry Pi.
-  1. `curl -sSL get.docker.com | sh`
+1. Install Docker nighly build on your Raspberry Pi.
+  1. `curl -fsSL get.docker.com | CHANNEL=nightly sh`
   1. `sudo usermod -aG docker pi`
   1. log out, then log back in again for the change to take effect
   1. `sudo systemctl start docker`
